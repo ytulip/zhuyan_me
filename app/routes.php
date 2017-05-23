@@ -1,6 +1,5 @@
 <?php
-Route::get('/work/more',function(){
-
+Route::get('/k',function(){
+    echo 'love';
 });
 Route::controller('/index','IndexController');
-

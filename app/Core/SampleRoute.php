@@ -1,9 +1,11 @@
 <?php
+namespace App\Core;
 /**
  * 简单的路由类，单列模式
  * Class SampleRoute
  */
-class SampleRoute{
+class SampleRoute
+{
     //保存例实例在此属性中
     private static $_instance;
     private $_route;
@@ -35,7 +37,8 @@ class SampleRoute{
     /**
      * 初始化函数
      */
-    public function init(){
+    public function init()
+    {
     }
 
     /**
@@ -43,7 +46,8 @@ class SampleRoute{
      * @param $route
      * @param callable $fun
      */
-    public function get($route,Closure $fun){
+    public function get($route,\Closure $fun)
+    {
         if($route == $this->_route){
             $fun();
             exit;
@@ -55,12 +59,12 @@ class SampleRoute{
      * @param $route
      * @param $controller
      */
-    public function controller($route,$controller){
+    public function controller($route,$controller)
+    {
 //        call_user_func_array([$controller, $name]);
 
         $funName = end($this->_route_args);
-//        var_dump($funName);
-        return $controller::$funName();
+        return (new $controller())->$funName();
     }
 
     //阻止用户复制对象实例
@@ -69,7 +73,8 @@ class SampleRoute{
         trigger_error('Clone is not allow' ,E_USER_ERROR);
     }
 
-    public function exec(){
-        include_once app_path . '/routes.php';
+    public function exec()
+    {
+        include_once APP_PATH . '/routes.php';
     }
 }
