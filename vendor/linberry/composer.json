@@ -1,0 +1,13 @@
+{
+    "name": "ytulip/linberry",
+    "description": "the package is uesd to new a app for ytulip's php framwork",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lin Yi",
+            "email": "yi@zhuyan.me"
+        }
+    ],
+    "require": {},
+	"bin": ["linberry"]
+}

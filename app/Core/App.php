@@ -20,4 +20,13 @@ class App
             class_alias($val,$key);
         }
     }
+
+
+    /**
+     * @param \Closure $fn
+     */
+    public function singleton(\Closure $fn)
+    {
+
+    }
 }
