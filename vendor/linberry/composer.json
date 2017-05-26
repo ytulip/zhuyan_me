@@ -9,5 +9,11 @@
         }
     ],
     "require": {},
-	"bin": ["linberry"]
+	"bin": ["linberry"],
+    "repositories": {
+      "packagist": {
+        "type": "composer",
+        "url": "https://packagist.phpcomposer.com"
+      }
+    }
 }
